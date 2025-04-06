@@ -1,0 +1,6 @@
+@CatStealer_HostAddress = http://localhost:5081
+
+GET {{CatStealer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
