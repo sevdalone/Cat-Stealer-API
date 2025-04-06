@@ -22,7 +22,7 @@ This ASP.NET Core Web API project fetches cat images from the Cat as a Service A
 
 ```bash
 git clone https://github.com/sevdalone/Cat-Stealer-API.git
-cd cat-stealer
+cd cat-stealer-api
 ```
 
 ### 2. Configure the application
@@ -32,8 +32,8 @@ Update the `appsettings.json` file with your Cat API key and database connection
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=CatStealerDb;Trusted_Connection=True;MultipleActiveResultSets=true",
-    "HangfireConnection": "Server=(localdb)\\mssqllocaldb;Database=CatStealerHangfire;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=cat.stealer;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "HangfireConnection": "Server=(localdb)\\mssqllocaldb;Database=cat.stealer;Trusted_Connection=True;MultipleActiveResultSets=true"
   },
   "CatApi": {
     "ApiKey": "YOUR_CAT_API_KEY_HERE"
@@ -71,10 +71,10 @@ Build and run the application using Docker:
 
 ```bash
 # Build the Docker image
-docker build -t cat-stealer .
+docker build -t cat-stealer-api .
 
 # Run the container
-docker run -p 8080:80 -e "ConnectionStrings__DefaultConnection=YOUR_DB_CONNECTION_STRING" -e "CatApi__ApiKey=YOUR_API_KEY" cat-stealer
+docker run -p 8080:80 -e "ConnectionStrings__DefaultConnection=YOUR_DB_CONNECTION_STRING" -e "CatApi__ApiKey=YOUR_API_KEY" cat-stealer-api
 ```
 
 ## License
